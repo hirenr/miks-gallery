@@ -11,12 +11,14 @@
 
     function redirect() {
 
-        console.log(window.location)
+        // console.log(window.location)
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
+
+        console.log(params.code);
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-        window.location = `miks-oauth://plex/${params.code}`
+        // window.location = `miks-oauth://plex/${params.code}`
     }
     // redirect();
     </script>
