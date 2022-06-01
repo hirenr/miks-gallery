@@ -6,11 +6,18 @@
 </head>
 <body>
     <script>
-    function getURL() {
-        alert("The URL of this page is: " + window.location.href);
+
+
+
+    function redirect() {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+        window.location = `miks-oauth://plex/${params.code}`
     }
     </script>
-     
-    <button type="button" onclick="getURL();">Get Page URL</button>
+     If not already redirected. 
+    <button type="button" onclick="redirect();">Click Here to Continue</button>
 </body>
 </html>
