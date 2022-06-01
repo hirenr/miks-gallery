@@ -16,9 +16,11 @@
             get: (searchParams, prop) => searchParams.get(prop),
         });
 
-        console.log(params.code);
+        // console.log(params.code);
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-        // window.location = `miks-oauth://plex/${params.code}`
+        const code = params.code;
+        
+        window.location = code ? `miks-oauth://plex/${code}` : `https://www.google.com`
     }
     // redirect();
     </script>
