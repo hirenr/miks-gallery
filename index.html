@@ -22,7 +22,9 @@
         
         window.location = code ? `miks-oauth://plex/${code}` : `https://www.google.com`
     }
-    redirect();
+    window.onload = (event) => {
+        redirect();
+    };
     </script>
      If not already redirected. 
     <button type="button" onclick="redirect();">Click Here to Continue</button>
