@@ -19,8 +19,7 @@
         // console.log(params.code);
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
         const code = params.code;
-        
-        window.location = code ? `miks-oauth://plex/${code}` : `https://www.google.com`
+        window.location.replace(code ? `miks-oauth://plex/${code}` : `https://www.google.com`)
     }
     window.onload = (event) => {
         redirect();
